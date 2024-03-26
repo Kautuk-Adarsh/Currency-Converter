@@ -7,6 +7,9 @@ const { createUser, loginUser, generateApiKey } = require('./users');
 const router= express.Router();
 router.use(bodyParser.json());
 
+
+
+
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -18,6 +21,11 @@ connection.connect((err) => {
   if (err) throw err;
   console.log('Connected to MySQL database');
 });
+
+
+
+
+
 
 router.post('/signup', (req, res) => {
   const { username, password } = req.body;
